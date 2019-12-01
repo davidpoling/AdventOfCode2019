@@ -5,7 +5,5 @@ public class Driver {
         Day1 day1 = new Day1();
         day1.partOne();
         day1.partTwo();
-
-        System.out.println("Testing");
     }
 }
