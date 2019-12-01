@@ -18,4 +18,26 @@ public class Day1 {
             e.printStackTrace();
         }
     }
+
+    public void partTwo() {
+        try {
+            Integer sum = Files.readAllLines(Paths.get(FILE_NAME))
+                    .stream()
+                    .mapToInt(val -> calculateAdditionalFuel(Integer.parseInt(val) / 3 - 2))
+                    .sum();
+            System.out.println(sum);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private int calculateAdditionalFuel(int val) {
+        int fuelSum = 0;
+
+        while (val > 0) {
+            fuelSum += val;
+            val = (val / 3) - 2;
+        }
+        return fuelSum;
+    }
 }
